@@ -51,7 +51,7 @@ body {
 
 .logo.mostrar{
     top: 60%;
-    animation: fadeIn 3s forwards;
+    animation: fadeIn 3s 1s forwards;
 }
 
 .proximamente.mostrar{
