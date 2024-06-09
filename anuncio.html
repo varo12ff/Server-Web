@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/audio_init.js" defer></script>
+    
 </head>
 <body>
     <audio id="ost_server" src="audio/main_menu_sound.mp3" type="audio/mp3"></audio>
@@ -13,5 +13,26 @@
         <img src="img/logo.png" alt="Primera Imagen" class="imagen logo">
         <img src="img/proximamente.png" alt="Primera Imagen" class="imagen proximamente">
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var startButton = document.getElementById('startButton');
+            var audio = document.getElementById('ost_server');
+            var imagen1 = document.querySelector('.proximamente');
+            var imagen2 = document.querySelector('.logo');
+
+            startButton.addEventListener('click', function() {
+                startButton.style.display = 'none'; // Oculta el botón
+                audio.play().catch(function(error) {
+                    console.log('Error en la reproducción del audio: ', error);
+                });
+
+                // Inicia la animación de las imágenes
+                imagen1.classList.add('mostrar');
+                setTimeout(function() {
+                    imagen2.classList.add('mostrar');
+                }, 18000); // 4 segundos después
+            });
+        });
+    </script>
 </body>
 </html>
